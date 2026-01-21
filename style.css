@@ -1,0 +1,232 @@
+:root {
+    /* Work Theme (Default) */
+    --bg-color: #f0f4f8;
+    --text-color: #2d3748;
+    --card-bg: #ffffff;
+    --card-hover: #e2e8f0;
+    --accent-color: #3182ce;
+    --font-family: 'Space Grotesk', sans-serif;
+}
+
+[data-theme="personal"] {
+    /* Personal Theme */
+    --bg-color: #1a202c;
+    --text-color: #e2e8f0;
+    --card-bg: #2d3748;
+    --card-hover: #4a5568;
+    --accent-color: #ed8936;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.2s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100vh;
+    overflow: hidden;
+    /* Prevent body scroll, let containers scroll */
+}
+
+.dashboard-layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    width: 350px;
+    background-color: var(--card-bg);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Fixed: changed from center to flex-start to prevent top cutoff */
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+
+
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+}
+
+.clock {
+    font-size: 6rem;
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 1;
+}
+
+.mode-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.bookmarks-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+
+.category-section {
+    width: 100%;
+    text-align: left;
+}
+
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--accent-color);
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.bookmark-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    /* changed to row for icon + text */
+    align-items: center;
+    justify-content: flex-start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    height: auto;
+    /* let content define height */
+    min-height: 100px;
+    gap: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.bookmark-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-hover);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bookmark-icon-text {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.03);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.bookmark-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.bookmark-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.bookmark-desc {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Debug Controls */
+.debug-controls {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    font-size: 0.8rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.debug-controls input {
+    padding: 0.25rem;
+    border-radius: 4px;
+    border: none;
+}
+
+.debug-controls button {
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--accent-color);
+    color: white;
+    cursor: pointer;
+}
+
+/* Calendar Container */
+.calendar-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: none;
+    /* Removed shadow as it's in a sidebar now */
+}
+
+.calendar-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
