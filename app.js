@@ -10,7 +10,8 @@ const bookmarks = {
                 { title: 'Google Calendar', desc: 'Meetings & scheduling', icon: 'Cal', url: 'https://calendar.google.com' },
                 { title: 'Google Sheets', desc: 'Spreadsheets & data', icon: 'S', url: 'https://docs.google.com/spreadsheets' },
                 { title: 'Google Docs', desc: 'Documents', icon: 'D', url: 'https://docs.google.com/document' },
-                { title: 'Google Forms', desc: 'Forms', icon: 'F', url: 'https://docs.google.com/forms' }
+                { title: 'Google Forms', desc: 'Forms', icon: 'F', url: 'https://docs.google.com/forms' },
+                { title: 'Shared Drive', desc: 'Team storage', icon: 'SD', url: 'https://drive.google.com/drive/shared-drives' }
             ]
         },
         {
