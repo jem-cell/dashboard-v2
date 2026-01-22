@@ -11,7 +11,8 @@ const bookmarks = {
                 { title: 'Google Sheets', desc: 'Spreadsheets & data', icon: 'S', url: 'https://docs.google.com/spreadsheets' },
                 { title: 'Google Docs', desc: 'Documents', icon: 'D', url: 'https://docs.google.com/document' },
                 { title: 'Google Forms', desc: 'Forms', icon: 'F', url: 'https://docs.google.com/forms' },
-                { title: 'Shared Drive', desc: 'Team storage', icon: 'SD', url: 'https://drive.google.com/drive/shared-drives' }
+                { title: 'Shared Drive', desc: 'Team storage', icon: 'SD', url: 'https://drive.google.com/drive/u/0/folders/0AAZUVdPYQtvyUk9PVA' },
+                { title: 'Looker Studio', desc: 'Dashboards & reporting', icon: 'Look', url: 'https://lookerstudio.google.com' }
             ]
         },
         {
@@ -24,7 +25,6 @@ const bookmarks = {
         {
             category: 'Analytics & Collaboration',
             items: [
-                { title: 'Looker Studio', desc: 'Dashboards & reporting', icon: 'Look', url: 'https://lookerstudio.google.com' },
                 { title: 'Lucidchart', desc: 'Diagrams & flowcharts', icon: 'Lc', url: 'https://lucid.app' },
                 { title: 'Dropbox', desc: 'File storage', icon: 'DB', url: 'https://www.dropbox.com' },
                 { title: 'Slack', desc: 'Team communication', icon: 'S', url: 'https://slack.com' },
@@ -34,9 +34,9 @@ const bookmarks = {
         {
             category: 'Social Media',
             items: [
-                { title: 'Instagram', desc: 'Content & engagement', icon: 'IG', url: 'https://www.instagram.com' },
-                { title: 'LinkedIn', desc: 'Networking', icon: 'in', url: 'https://www.linkedin.com' },
-                { title: 'YouTube', desc: 'Video content', icon: 'YT', url: 'https://www.youtube.com' }
+                { title: 'Instagram', desc: 'Content & engagement', icon: 'IG', url: 'https://www.instagram.com/surveyair/' },
+                { title: 'LinkedIn', desc: 'Networking', icon: 'in', url: 'https://www.linkedin.com/company/survey-air' },
+                { title: 'YouTube', desc: 'Video content', icon: 'YT', url: 'https://www.youtube.com/@surveyair' }
             ]
         }
     ],
@@ -71,8 +71,24 @@ const modeIndicatorEl = document.getElementById('mode-indicator');
 const bookmarksGridEl = document.getElementById('bookmarks-grid');
 const debugTimeInput = document.getElementById('debug-time');
 const resetTimeBtn = document.getElementById('reset-time');
+const debugMenuBtn = document.getElementById('debug-menu-btn');
+const debugControls = document.getElementById('debug-controls');
 
 let debugTimeOffset = null;
+
+// Debug Menu Toggle
+debugMenuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    debugControls.classList.toggle('visible');
+    debugMenuBtn.classList.toggle('active');
+});
+
+document.addEventListener('click', (e) => {
+    if (!debugControls.contains(e.target) && !debugMenuBtn.contains(e.target)) {
+        debugControls.classList.remove('visible');
+        debugMenuBtn.classList.remove('active');
+    }
+});
 
 function getCurrentTime() {
     if (debugTimeOffset !== null) {
