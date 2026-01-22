@@ -19,7 +19,8 @@ const bookmarks = {
             category: 'Automation',
             items: [
                 { title: 'OpenAI API Dashboard', desc: 'AI & model management', icon: 'AI', url: 'https://platform.openai.com' },
-                { title: 'Make.com', desc: 'Workflow automation', icon: 'Mk', url: 'https://www.make.com' }
+                { title: 'Make.com', desc: 'Workflow automation', icon: 'Mk', url: 'https://www.make.com' },
+                { title: 'GitHub', desc: 'Code repository', icon: 'GH', url: 'https://github.com/jem-cell' }
             ]
         },
         {
@@ -52,7 +53,8 @@ const bookmarks = {
             category: 'Social',
             items: [
                 { title: 'Reddit', desc: 'Community', url: 'https://reddit.com', icon: '👽' },
-                { title: 'Twitter', desc: 'News & updates', url: 'https://twitter.com', icon: '🐦' }
+                { title: 'Twitter', desc: 'News & updates', url: 'https://twitter.com', icon: '🐦' },
+                { title: 'GitHub', desc: 'Personal projects', url: 'https://github.com/jem-cell', icon: '🐙' }
             ]
         },
         {
