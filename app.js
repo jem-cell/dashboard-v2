@@ -6,38 +6,38 @@ const bookmarks = {
         {
             category: 'Google Workspace',
             items: [
-                { title: 'Gmail', desc: 'Email', icon: 'G', url: 'https://mail.google.com' },
-                { title: 'Google Calendar', desc: 'Meetings & scheduling', icon: 'Cal', url: 'https://calendar.google.com' },
-                { title: 'Google Sheets', desc: 'Spreadsheets & data', icon: 'S', url: 'https://docs.google.com/spreadsheets' },
-                { title: 'Google Docs', desc: 'Documents', icon: 'D', url: 'https://docs.google.com/document' },
-                { title: 'Google Forms', desc: 'Forms', icon: 'F', url: 'https://docs.google.com/forms' },
-                { title: 'Shared Drive', desc: 'Team storage', icon: 'SD', url: 'https://drive.google.com/drive/u/0/folders/0AAZUVdPYQtvyUk9PVA' },
-                { title: 'Looker Studio', desc: 'Dashboards & reporting', icon: 'Look', url: 'https://lookerstudio.google.com' }
+                { title: 'Gmail', desc: 'Email', icon: '📧', url: 'https://mail.google.com' },
+                { title: 'Google Calendar', desc: 'Meetings & scheduling', icon: '📅', url: 'https://calendar.google.com' },
+                { title: 'Google Sheets', desc: 'Spreadsheets & data', icon: '📊', url: 'https://docs.google.com/spreadsheets' },
+                { title: 'Google Docs', desc: 'Documents', icon: '📝', url: 'https://docs.google.com/document' },
+                { title: 'Google Forms', desc: 'Forms', icon: '📋', url: 'https://docs.google.com/forms' },
+                { title: 'Shared Drive', desc: 'Team storage', icon: '📁', url: 'https://drive.google.com/drive/u/0/folders/0AAZUVdPYQtvyUk9PVA' },
+                { title: 'Looker Studio', desc: 'Dashboards & reporting', icon: '📈', url: 'https://lookerstudio.google.com' }
             ]
         },
         {
             category: 'Automation',
             items: [
-                { title: 'OpenAI API Dashboard', desc: 'AI & model management', icon: 'AI', url: 'https://platform.openai.com' },
-                { title: 'Make.com', desc: 'Workflow automation', icon: 'Mk', url: 'https://www.make.com' },
-                { title: 'GitHub', desc: 'Code repository', icon: 'GH', url: 'https://github.com/jem-cell' }
+                { title: 'OpenAI API Dashboard', desc: 'AI & model management', icon: '🤖', url: 'https://platform.openai.com' },
+                { title: 'Make.com', desc: 'Workflow automation', icon: '⚙️', url: 'https://www.make.com' },
+                { title: 'GitHub', desc: 'Code repository', icon: '🐙', url: 'https://github.com/jem-cell' }
             ]
         },
         {
             category: 'Analytics & Collaboration',
             items: [
-                { title: 'Lucidchart', desc: 'Diagrams & flowcharts', icon: 'Lc', url: 'https://lucid.app' },
-                { title: 'Dropbox', desc: 'File storage', icon: 'DB', url: 'https://www.dropbox.com' },
-                { title: 'Slack', desc: 'Team communication', icon: 'S', url: 'https://slack.com' },
-                { title: 'NIRA', desc: 'File storage', icon: 'NR', url: 'https://nira.com' }
+                { title: 'Lucidchart', desc: 'Diagrams & flowcharts', icon: '📐', url: 'https://lucid.app' },
+                { title: 'Dropbox', desc: 'File storage', icon: '📦', url: 'https://www.dropbox.com' },
+                { title: 'Slack', desc: 'Team communication', icon: '💬', url: 'https://slack.com' },
+                { title: 'NIRA', desc: 'File storage', icon: '☁️', url: 'https://nira.com' }
             ]
         },
         {
             category: 'Social Media',
             items: [
-                { title: 'Instagram', desc: 'Content & engagement', icon: 'IG', url: 'https://www.instagram.com/surveyair/' },
-                { title: 'LinkedIn', desc: 'Networking', icon: 'in', url: 'https://www.linkedin.com/company/survey-air' },
-                { title: 'YouTube', desc: 'Video content', icon: 'YT', url: 'https://www.youtube.com/@surveyair' }
+                { title: 'Instagram', desc: 'Content & engagement', icon: '📸', url: 'https://www.instagram.com/surveyair/' },
+                { title: 'LinkedIn', desc: 'Networking', icon: '💼', url: 'https://www.linkedin.com/company/survey-air' },
+                { title: 'YouTube', desc: 'Video content', icon: '🎥', url: 'https://www.youtube.com/@surveyair' }
             ]
         }
     ],
