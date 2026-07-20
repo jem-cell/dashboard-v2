@@ -28,7 +28,7 @@ const bookmarks = {
             category: 'Analytics & Collaboration',
             items: [
                 { title: 'Lucidchart', desc: 'Diagrams & flowcharts', icon: '📐', url: 'https://lucid.app' },
-                { title: 'Dropbox', desc: 'File storage', icon: '📦', url: 'https://www.dropbox.com' },
+                { title: 'AWS', desc: 'Cloud platform & login', icon: '☁️', url: 'https://d-9c67692c29.awsapps.com/start/' },
                 { title: 'Slack', desc: 'Team communication', icon: '💬', url: 'https://slack.com' },
                 { title: 'NIRA', desc: 'File storage', icon: '☁️', url: 'https://nira.com' }
             ]
