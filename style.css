@@ -1,40 +1,44 @@
 :root {
     /* Work Theme (Default) */
-    --bg-color: #f5f7fb;
-    --bg-image:
-        radial-gradient(circle at 10% 20%, rgba(49, 130, 206, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 90% 80%, rgba(49, 130, 206, 0.05) 0%, transparent 45%),
-        radial-gradient(rgba(49, 130, 206, 0.05) 1.5px, transparent 1.5px);
-    --bg-size: 100% 100%, 100% 100%, 24px 24px;
+    --bg-color: #f3f5fa;
+    --bg-image: radial-gradient(rgba(49, 130, 206, 0.12) 1.5px, transparent 1.5px);
+    --bg-size: 28px 28px;
     --text-color: #2d3748;
-    --card-bg: rgba(255, 255, 255, 0.65);
-    --card-border: rgba(255, 255, 255, 0.6);
-    --card-shadow: 0 8px 32px 0 rgba(49, 130, 206, 0.04), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
-    --card-hover: rgba(255, 255, 255, 0.9);
-    --sidebar-bg: rgba(255, 255, 255, 0.45);
-    --sidebar-border: rgba(49, 130, 206, 0.08);
+    --card-bg: rgba(255, 255, 255, 0.55);
+    --card-border: rgba(255, 255, 255, 0.45);
+    --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+    --card-hover: rgba(255, 255, 255, 0.85);
+    --sidebar-bg: rgba(255, 255, 255, 0.35);
+    --sidebar-border: rgba(49, 130, 206, 0.06);
     --icon-bg: rgba(49, 130, 206, 0.06);
     --accent-color: #3182ce;
     --font-family: 'Space Grotesk', sans-serif;
+
+    /* Blob Colors Work */
+    --blob-1-color: rgba(66, 153, 225, 0.3); /* blue */
+    --blob-2-color: rgba(159, 122, 234, 0.2); /* purple */
+    --blob-3-color: rgba(72, 187, 120, 0.2);  /* green/teal */
 }
 
 [data-theme="personal"] {
     /* Personal Theme */
-    --bg-color: #0b0f17;
-    --bg-image:
-        radial-gradient(circle at 80% 20%, rgba(237, 137, 54, 0.12) 0%, transparent 55%),
-        radial-gradient(circle at 20% 80%, rgba(107, 70, 193, 0.15) 0%, transparent 55%),
-        radial-gradient(rgba(237, 137, 54, 0.08) 1.5px, transparent 1.5px);
-    --bg-size: 100% 100%, 100% 100%, 24px 24px;
+    --bg-color: #080c14;
+    --bg-image: radial-gradient(rgba(237, 137, 54, 0.15) 1.5px, transparent 1.5px);
+    --bg-size: 28px 28px;
     --text-color: #e2e8f0;
-    --card-bg: rgba(26, 32, 44, 0.6);
-    --card-border: rgba(255, 255, 255, 0.05);
-    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-    --card-hover: rgba(45, 55, 72, 0.85);
-    --sidebar-bg: rgba(11, 15, 23, 0.45);
-    --sidebar-border: rgba(255, 255, 255, 0.04);
+    --card-bg: rgba(17, 24, 39, 0.5);
+    --card-border: rgba(255, 255, 255, 0.06);
+    --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --card-hover: rgba(31, 41, 55, 0.7);
+    --sidebar-bg: rgba(17, 24, 39, 0.3);
+    --sidebar-border: rgba(255, 255, 255, 0.03);
     --icon-bg: rgba(237, 137, 54, 0.12);
     --accent-color: #ed8936;
+
+    /* Blob Colors Personal */
+    --blob-1-color: rgba(237, 137, 54, 0.25); /* orange */
+    --blob-2-color: rgba(159, 122, 234, 0.22); /* purple */
+    --blob-3-color: rgba(245, 101, 101, 0.18); /* rose/red */
 }
 
 * {
@@ -53,6 +57,92 @@ body {
     height: 100vh;
     overflow: hidden;
     /* Prevent body scroll, let containers scroll */
+    position: relative;
+}
+
+/* Background Blobs Setup */
+.bg-blobs {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(140px);
+    opacity: 0.85;
+    transition: opacity 0.5s ease;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    mix-blend-mode: normal;
+    transition: background-color 1s ease;
+}
+
+.blob-1 {
+    width: 450px;
+    height: 450px;
+    background-color: var(--blob-1-color);
+    top: -10%;
+    left: 10%;
+    animation: drift-slow 25s infinite alternate ease-in-out;
+}
+
+.blob-2 {
+    width: 550px;
+    height: 550px;
+    background-color: var(--blob-2-color);
+    bottom: -15%;
+    right: 5%;
+    animation: drift-medium 30s infinite alternate ease-in-out;
+}
+
+.blob-3 {
+    width: 400px;
+    height: 400px;
+    background-color: var(--blob-3-color);
+    top: 30%;
+    right: 40%;
+    animation: drift-fast 20s infinite alternate ease-in-out;
+}
+
+@keyframes drift-slow {
+    0% {
+        transform: translate(0, 0) scale(1) rotate(0deg);
+    }
+    50% {
+        transform: translate(100px, 80px) scale(1.15) rotate(180deg);
+    }
+    100% {
+        transform: translate(-50px, 120px) scale(0.9) rotate(360deg);
+    }
+}
+
+@keyframes drift-medium {
+    0% {
+        transform: translate(0, 0) scale(1.1) rotate(0deg);
+    }
+    50% {
+        transform: translate(-120px, -60px) scale(0.85) rotate(-120deg);
+    }
+    100% {
+        transform: translate(80px, 40px) scale(1.05) rotate(240deg);
+    }
+}
+
+@keyframes drift-fast {
+    0% {
+        transform: translate(0, 0) scale(0.9) rotate(0deg);
+    }
+    50% {
+        transform: translate(70px, -90px) scale(1.1) rotate(150deg);
+    }
+    100% {
+        transform: translate(-60px, 50px) scale(1) rotate(-150deg);
+    }
 }
 
 .dashboard-layout {
