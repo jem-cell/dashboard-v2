@@ -12,7 +12,7 @@ const bookmarks = {
                 { title: 'Google Docs', desc: 'Documents', icon: '📝', url: 'https://docs.google.com/document' },
                 { title: 'Google Forms', desc: 'Forms', icon: '📋', url: 'https://docs.google.com/forms' },
                 { title: 'Shared Drive', desc: 'Team storage', icon: '📁', url: 'https://drive.google.com/drive/u/0/folders/0AAZUVdPYQtvyUk9PVA' },
-                { title: 'Looker Studio', desc: 'Dashboards & reporting', icon: '📈', url: 'https://lookerstudio.google.com' }
+                { title: 'Data Studio', desc: 'Dashboards & reporting', icon: '📈', url: 'https://lookerstudio.google.com' }
             ]
         },
         {
@@ -28,7 +28,7 @@ const bookmarks = {
             category: 'Analytics & Collaboration',
             items: [
                 { title: 'Lucidchart', desc: 'Diagrams & flowcharts', icon: '📐', url: 'https://lucid.app' },
-                { title: 'Dropbox', desc: 'File storage', icon: '📦', url: 'https://www.dropbox.com' },
+                { title: 'AWS', desc: 'Cloud platform & login', icon: '☁️', url: 'https://d-9c67692c29.awsapps.com/start/' },
                 { title: 'Slack', desc: 'Team communication', icon: '💬', url: 'https://slack.com' },
                 { title: 'NIRA', desc: 'File storage', icon: '☁️', url: 'https://nira.com' }
             ]
