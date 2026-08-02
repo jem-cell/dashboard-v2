@@ -78,6 +78,7 @@ const debugMenuBtn = document.getElementById('debug-menu-btn');
 const debugControls = document.getElementById('debug-controls');
 
 let debugTimeOffset = null;
+let currentMode = null;
 
 // Debug Menu Toggle
 debugMenuBtn.addEventListener('click', (e) => {
@@ -106,22 +107,29 @@ function updateDashboard() {
     const minutes = now.getMinutes();
 
     // Update Clock
-    clockEl.textContent = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+    const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+    if (clockEl.textContent !== timeString) {
+        clockEl.textContent = timeString;
+    }
 
     // Determine Mode
     const isWorkMode = hours >= WORK_START_HOUR && hours < WORK_END_HOUR;
+    const newMode = isWorkMode ? 'work' : 'personal';
 
-    // Update Theme & Content
-    if (isWorkMode) {
-        document.documentElement.removeAttribute('data-theme');
-        modeIndicatorEl.textContent = 'Work Mode';
-        greetingEl.textContent = 'Time to Focus';
-        renderBookmarks(bookmarks.work);
-    } else {
-        document.documentElement.setAttribute('data-theme', 'personal');
-        modeIndicatorEl.textContent = 'Personal Mode';
-        greetingEl.textContent = 'Time to Relax';
-        renderBookmarks(bookmarks.personal);
+    // Update Theme & Content only if mode has changed
+    if (newMode !== currentMode) {
+        currentMode = newMode;
+        if (isWorkMode) {
+            document.documentElement.removeAttribute('data-theme');
+            modeIndicatorEl.textContent = 'Work Mode';
+            greetingEl.textContent = 'Time to Focus';
+            renderBookmarks(bookmarks.work);
+        } else {
+            document.documentElement.setAttribute('data-theme', 'personal');
+            modeIndicatorEl.textContent = 'Personal Mode';
+            greetingEl.textContent = 'Time to Relax';
+            renderBookmarks(bookmarks.personal);
+        }
     }
 }
 
