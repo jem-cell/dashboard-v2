@@ -20,7 +20,7 @@ const bookmarks = {
             items: [
                 { title: 'OpenAI API Dashboard', desc: 'AI & model management', icon: '🤖', url: 'https://platform.openai.com' },
                 { title: 'Make.com', desc: 'Workflow automation', icon: '⚙️', url: 'https://www.make.com' },
-                { title: 'GitHub', desc: 'Code repository', icon: '🐙', url: 'https://github.com/jem-cell' },
+                { title: 'GitHub', desc: 'Code repository', icon: '🐙', url: 'https://github.com/jemini-pro' },
                 { title: 'Jules', desc: 'Internal link', icon: '🤖', url: 'https://jules.google.com' }
             ]
         },
