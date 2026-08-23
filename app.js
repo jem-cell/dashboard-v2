@@ -19,6 +19,7 @@ const bookmarks = {
             category: 'Automation',
             items: [
                 { title: 'OpenAI API Dashboard', desc: 'AI & model management', icon: '🤖', url: 'https://platform.openai.com' },
+                { title: 'Ollama', desc: 'Usage & settings', icon: '🦙', url: 'https://ollama.com/settings' },
                 { title: 'Make.com', desc: 'Workflow automation', icon: '⚙️', url: 'https://www.make.com' },
                 { title: 'GitHub', desc: 'Code repository', icon: '🐙', url: 'https://github.com/jemini-pro' },
                 { title: 'Jules', desc: 'Internal link', icon: '🤖', url: 'https://jules.google.com' }
