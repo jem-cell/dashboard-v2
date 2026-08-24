@@ -71,7 +71,6 @@ const bookmarks = {
 
 const clockEl = document.getElementById('clock');
 const greetingEl = document.getElementById('greeting');
-const modeIndicatorEl = document.getElementById('mode-indicator');
 const bookmarksGridEl = document.getElementById('bookmarks-grid');
 const debugTimeInput = document.getElementById('debug-time');
 const resetTimeBtn = document.getElementById('reset-time');
@@ -79,7 +78,8 @@ const debugMenuBtn = document.getElementById('debug-menu-btn');
 const debugControls = document.getElementById('debug-controls');
 
 let debugTimeOffset = null;
-let currentMode = null;
+let currentTheme = null;
+let bookmarksRendered = false;
 
 // Debug Menu Toggle
 debugMenuBtn.addEventListener('click', (e) => {
@@ -113,24 +113,26 @@ function updateDashboard() {
         clockEl.textContent = timeString;
     }
 
-    // Determine Mode
-    const isWorkMode = hours >= WORK_START_HOUR && hours < WORK_END_HOUR;
-    const newMode = isWorkMode ? 'work' : 'personal';
+    // Determine Theme based on specified hours
+    const isWorkHours = hours >= WORK_START_HOUR && hours < WORK_END_HOUR;
+    const newTheme = isWorkHours ? 'work' : 'personal';
 
-    // Update Theme & Content only if mode has changed
-    if (newMode !== currentMode) {
-        currentMode = newMode;
-        if (isWorkMode) {
+    // Update Theme only when changed
+    if (newTheme !== currentTheme) {
+        currentTheme = newTheme;
+        if (isWorkHours) {
             document.documentElement.removeAttribute('data-theme');
-            modeIndicatorEl.textContent = 'Work Mode';
             greetingEl.textContent = 'Time to Focus';
-            renderBookmarks(bookmarks.work);
         } else {
             document.documentElement.setAttribute('data-theme', 'personal');
-            modeIndicatorEl.textContent = 'Personal Mode';
             greetingEl.textContent = 'Time to Relax';
-            renderBookmarks(bookmarks.personal);
         }
+    }
+
+    // Work bookmarks are the main bookmarks all the time
+    if (!bookmarksRendered) {
+        renderBookmarks(bookmarks.work);
+        bookmarksRendered = true;
     }
 }
 
