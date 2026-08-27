@@ -41,6 +41,13 @@ const bookmarks = {
                 { title: 'LinkedIn', desc: 'Networking', icon: '💼', url: 'https://www.linkedin.com/company/survey-air' },
                 { title: 'YouTube', desc: 'Video content', icon: '🎥', url: 'https://www.youtube.com/@surveyair' }
             ]
+        },
+        {
+            category: 'Work Tools',
+            items: [
+                { title: 'Portal', desc: 'Survey Air portal', icon: '🔑', url: 'https://clients.surveyair.co.uk/login/' },
+                { title: 'Website', desc: 'Survey Air website', icon: '🌐', url: 'https://surveyair.co.uk/' }
+            ]
         }
     ],
     personal: [
